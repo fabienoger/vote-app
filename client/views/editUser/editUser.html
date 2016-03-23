@@ -1,0 +1,46 @@
+<template name="editUser">
+  <div class="edit-user">
+    <h1>Mon profil</h1>
+    <div class="informations ">
+      <div class="wrapper">
+        <div class="header">
+          <h2 class="valign-wrapper center-align">
+            <i class="icon info circle large"></i>
+            Mes informations
+          </h2>
+        </div>
+        <div class="body">
+          <p class="valign-wrapper">
+            <span>Email :&nbsp;</span>
+            {{ getCurrentUserEmail }}
+          </p>
+          <form id="change-password-form" class="change-password-form ui form">
+            <h3>Changer votre mot de passe</h3>
+            <div id="info-password"></div>
+            <div class="field">
+              <label for="oldPassword">Ancien mot de passe</label>
+              <input type="password" class="" id="oldPassword" />
+            </div>
+            <div class="field">
+              <label for="newPassword">Nouveau mot de passe</label>
+              <input type="password" class="" id="newPassword" />
+            </div>
+            <div class="field">
+              <label for="confirmPassword">Confirmez le nouveau mot de passe</label>
+              <input type="password" class="" id="confirmPassword" />
+            </div>
+            <div id="info-confirm-password"></div>
+            <div class="field">
+              <button type="submit" class="ui right labeled green icon button" id="change-password-button">
+                <i class="checkmark icon right"></i>
+                Enregistrer
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="footer">
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
