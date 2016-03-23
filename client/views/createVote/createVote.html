@@ -3,8 +3,33 @@
     <h1># createVote</h1>
     <form id="create-vote-form" class="ui form">
       <div class="field">
-        <label for="vote-name">Name</label>
-        <input type="text" id="vote-name" />
+        <label for="new-vote-name">Name :</label>
+        <input type="text" id="new-vote-name" />
+      </div>
+      <div class="field">
+        <div class="ui action input">
+          <label for="new-vote-option">Vote option :</label>
+          <input type="text" id="new-vote-option" />
+          <button id="new-vote-add-option" class="ui icon button">
+            <i class="plus icon"></i>
+          </button>
+        </div>
+      </div>
+      {{#if voteOptionList}}
+        <div id="new-vote-option-list" class="ui list">
+          {{#each voteOptionList }}
+            <div class="item">
+              <a class="ui label vote">
+                {{ . }}
+                <i class="delete icon"></i>
+              </a>
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+      <div class="field">
+        <label for="dateTimePicker">End Date : </label>
+        <input type="text" class="ui dropdown datetimepicker" id="date-time-picker" />
       </div>
       <button class="ui button green labeled icon right">
         <i class="checkmark icon right"></i>

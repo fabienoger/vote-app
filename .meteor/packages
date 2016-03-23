@@ -20,9 +20,14 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 semantic:ui
 fourseven:scss
 flemay:less-autoprefixer
+sarasate:semantic-ui-datetimepicker
 
 # Utils
 http
+underscore
+reactive-var
+reactive-dict
+manuel:reactivearray
 
 # Accounts
 email
