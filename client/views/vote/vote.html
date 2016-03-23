@@ -1,0 +1,24 @@
+<template name="vote">
+  <div class="vote">
+    <h1># Vote</h1>
+    <div class="row">
+      <div class="ui grid">
+        <div class="six wide column">
+          <h2>Afficher tous les votes</h2>
+          <ul>
+            {{#each votes}}
+              <li>{{ name }}</li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class="five wide column">
+          <h2>Créer un vote</h2>
+          {{> createVote}}
+        </div>
+        <div class="five wide column">
+         <h2>Chat du vote</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
