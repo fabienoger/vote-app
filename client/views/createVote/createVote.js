@@ -38,7 +38,11 @@ Template.createVote.events({
     var voteOptionList = t.find('#new-vote-option');
     if (voteOption.value.trim() != "") {
       // Push new voteOption in ReactiveArray
-      Modules.client.vote.newVote.options.push(voteOption.value.trim());
+      Modules.client.vote.newVote.options.push({
+        name: voteOption.value.trim(),
+        voted: 0,
+        usersId: []
+      });
       // Empty field #new-vote-option
       voteOption.value = "";
     }
@@ -57,10 +61,16 @@ Template.createVote.events({
       voteOptions = Modules.client.vote.newVote.options.array();
 
       // Insert vote in collection Votes
-      Votes.insert({
+      Meteor.call("insertVote", {
         name: voteName.value,
         endDate: new Date(voteEndDate.value),
         options: voteOptions
+      }, function(result, error) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(result);
+        }
       });
 
       // Empty form
