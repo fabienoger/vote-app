@@ -27,6 +27,7 @@ http
 underscore
 reactive-var
 reactive-dict
+momentjs:moment
 manuel:reactivearray
 
 # Accounts

@@ -5,11 +5,21 @@
       <div class="ui grid">
         <div class="six wide column">
           <h2>Afficher tous les votes</h2>
-          <ul>
+          <div class="ui list">
             {{#each votes}}
-              <li>{{ name }}</li>
+              <div class="item">
+                <div class="content">
+                  <div class="header">
+                    {{ name }}
+                  </div>
+                  {{ formatDate endDate }}
+                  {{#each voteOptionsList _id}}
+                    <p>{{ . }}</p>
+                  {{/each}}
+                </div>
+              </div>
             {{/each}}
-          </ul>
+          </div>
         </div>
         <div class="five wide column">
           <h2>Créer un vote</h2>

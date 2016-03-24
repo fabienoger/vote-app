@@ -7,8 +7,8 @@
         <input type="text" id="new-vote-name" />
       </div>
       <div class="field">
+        <label for="new-vote-option">Vote option :</label>
         <div class="ui action input">
-          <label for="new-vote-option">Vote option :</label>
           <input type="text" id="new-vote-option" />
           <button id="new-vote-add-option" class="ui icon button">
             <i class="plus icon"></i>
@@ -16,7 +16,7 @@
         </div>
       </div>
       {{#if voteOptionList}}
-        <div id="new-vote-option-list" class="ui list">
+        <div id="new-vote-option-list" class="ui horizontal list">
           {{#each voteOptionList }}
             <div class="item">
               <a class="ui label vote">
@@ -29,7 +29,7 @@
       {{/if}}
       <div class="field">
         <label for="dateTimePicker">End Date : </label>
-        <input type="text" class="ui dropdown datetimepicker" id="date-time-picker" />
+        <input type="text" class="ui dropdown datetimepicker" id="new-vote-date-time-picker" />
       </div>
       <button class="ui button green labeled icon right">
         <i class="checkmark icon right"></i>

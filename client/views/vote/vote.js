@@ -21,6 +21,12 @@ Template.vote.events({
 Template.vote.helpers({
   votes: function() {
     return Votes.find().fetch();
+  },
+  voteOptionsList: function(id) {
+    console.log(id);
+    var vote = Votes.findOne({_id: id});
+    console.log(vote.endDate);
+    return vote.options || null;
   }
 });
 

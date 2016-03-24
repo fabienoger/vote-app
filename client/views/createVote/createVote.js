@@ -36,21 +36,41 @@ Template.createVote.events({
     // Set variables
     var voteOption = t.find('#new-vote-option');
     var voteOptionList = t.find('#new-vote-option');
-    // Push new voteOption in ReactiveArray
-    Modules.client.vote.newVote.options.push(voteOption.value.trim());
-    // Empty field #new-vote-option
-    voteOption.value = "";
+    if (voteOption.value.trim() != "") {
+      // Push new voteOption in ReactiveArray
+      Modules.client.vote.newVote.options.push(voteOption.value.trim());
+      // Empty field #new-vote-option
+      voteOption.value = "";
+    }
   },
   // Create vote & insert in Votes collection
   'submit #create-vote-form': function(e, t) {
     e.preventDefault();
-    console.log(t);
-    var voteName = t.find('#new-vote-name').value.trim();
-    console.log(voteName);
-/*
-    Votes.insert({
-      name: vote-name;
-    });
-*/
+    // Set variables
+    var voteName = t.find('#new-vote-name');
+    var voteEndDate = t.find('#new-vote-date-time-picker');
+    var voteOptions = Modules.client.vote.newVote.options.list();
+    if (voteName.value && voteEndDate) {
+      // Set ReactiveVar
+      Modules.client.vote.newVote.name.set(voteName.value.trim());
+      Modules.client.vote.newVote.endDate = voteEndDate.value;
+      voteOptions = Modules.client.vote.newVote.options.array();
+
+      // Insert vote in collection Votes
+      Votes.insert({
+        name: voteName.value,
+        endDate: new Date(voteEndDate.value),
+        options: voteOptions
+      });
+
+      // Empty form
+      voteEndDate.value = "";
+      voteName.value = "";
+
+      // Empty modules newVote
+      Modules.client.vote.newVote.options.clear();
+      Modules.client.vote.newVote.name.set(false);
+      Modules.client.vote.newVote.endDate = null;
+    }
   }
 });
