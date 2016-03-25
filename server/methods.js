@@ -23,17 +23,19 @@ Meteor.methods({
     }
 */
     try {
-      Votes.update({
+      var updateVote = Votes.update({
         _id: mongoId,
         'options.name': voteName,
         'options.usersId': { '$ne': userId }
       }, {
         $inc: {'options.$.voted': 1},
-        $push: {'options.$.usersId': userId}
+        $push: {'options.$.usersId': userId},
+        $addToSet: {usersId: userId}
       });
     } catch (e) {
       console.log(e);
     }
+    console.log(updateVote);
     console.log(Votes.findOne({_id: mongoId}));
   }
 });

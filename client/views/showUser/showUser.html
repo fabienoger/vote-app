@@ -1,0 +1,10 @@
+<template name="showUser">
+  <div class="show-user">
+    <h1># showUser</h1>
+    {{#if getUser}}
+      <h2>{{ getUser.profile.firstName }} {{ getUser.profile.lastName }}</h2>
+    {{else}}
+    
+    {{/if}}
+  </div>
+</template>

@@ -29,6 +29,7 @@
                 </div>
                 <div class="extra content">
                   <div class="vote-options-list">
+                    <div id="vote-options-list-info"></div>
                     {{#each voteOptionsList _id}}
                       <a data-id="{{ ../_id }}" class="ui button vote-option
                         {{#if ifVoted ../_id name}}blue{{/if}}">

@@ -12,18 +12,17 @@ Template.vote.rendered = function() {
 #                                                                            #
 *****************************************************************************/
 Template.vote.events({
-  'click .ui.label.vote-option': function(e, t) {
+  'click .ui.button.vote-option': function(e, t) {
     // Set variables
     var mongoId = e.target.dataset.id;
     var childs = e.target.parentElement.children;
     var vote = Votes.findOne({_id: mongoId});
     var result = false;
     // Check if user has already voted
-    _.map(vote.options, function(option) {
-      var r = Modules.both.utils.contains(option.usersId, Meteor.userId());
-      if (r == true)
-        result = true;
-    });
+    var r = Modules.both.utils.contains(vote.usersId, Meteor.userId());
+    if (r == true)
+      result = true;
+
     if (result == false) {
       // Remove class for all elements
       for(var i = 0; i < childs.length; i++) {
@@ -45,6 +44,7 @@ Template.vote.events({
     } else {
       // Add display panel
       console.log("Vous avez déjà voté !");
+      Modules.client.utils.displayPanel("vote-options-list-info", "negative", "warning", "You have already voted !");
     }
   }
 });
@@ -60,12 +60,15 @@ Template.vote.helpers({
     var vote = Votes.findOne({_id: voteId});
     var usersWhoVoted = [];
     // Loop on vote.options
-    _.map(vote.options, function(option) {
+    _.map(vote.usersId, function(userId) {
+      usersWhoVoted.push(Meteor.users.findOne({_id: userId}));
+/* OLD select on options[i].usersId
       // Loop on usersId array
       _.map(option.usersId, function(userId) {
         // Get each userId and push in array
         usersWhoVoted.push(Meteor.users.findOne({_id: userId}));
       });
+*/
     });
     return usersWhoVoted;
   },

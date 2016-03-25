@@ -7,6 +7,14 @@ FlowRouter.route('/', {
 
 // ##### User Routes #####
 
+// Show User route
+FlowRouter.route('/users/:id', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'showUser', navbar: 'menu' });
+  },
+  name: 'showUser'
+});
+
 // Login route
 FlowRouter.route('/login', {
   action: function() {
