@@ -5,17 +5,32 @@
       <div class="ui grid">
         <div class="six wide column">
           <h2>Afficher tous les votes</h2>
-          <div class="ui list">
+          <div class="ui cards">
             {{#each votes}}
-              <div class="item">
+              <div class="red card">
                 <div class="content">
                   <div class="header">
                     {{ name }}
                   </div>
-                  {{ formatDate endDate }}
+                  <div class="meta">
+                    {{ formatDate endDate }}
+                  </div>
+                  <div class="description">
+                    <div class="people-who-voted">
+                      <h4>People who voted :</h4>
+                      {{#each userListVote _id}}
+                        <a class="ui label" href="/users/{{ _id }}">
+                          {{ profile.firstName }}
+                          {{ profile.lastName }}
+                        </a>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+                <div class="extra content">
                   <div class="vote-options-list">
                     {{#each voteOptionsList _id}}
-                      <a data-id="{{ ../_id }}" class="ui label vote-option
+                      <a data-id="{{ ../_id }}" class="ui button vote-option
                         {{#if ifVoted ../_id name}}blue{{/if}}">
                         {{ name }}
                       </a>

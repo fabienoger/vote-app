@@ -54,6 +54,21 @@ Template.vote.events({
 #                                                                            #
 *****************************************************************************/
 Template.vote.helpers({
+  // Return all users who vote
+  userListVote: function(voteId) {
+    // Set variables
+    var vote = Votes.findOne({_id: voteId});
+    var usersWhoVoted = [];
+    // Loop on vote.options
+    _.map(vote.options, function(option) {
+      // Loop on usersId array
+      _.map(option.usersId, function(userId) {
+        // Get each userId and push in array
+        usersWhoVoted.push(Meteor.users.findOne({_id: userId}));
+      });
+    });
+    return usersWhoVoted;
+  },
   // If currentUser vote
   ifVoted: function(voteId, nameOption) {
     // Get mongo object vote

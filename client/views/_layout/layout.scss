@@ -3,3 +3,8 @@
 main.ui.container-fluid {
   margin-top: 50px;
 }
+
+// Remove radius for UI items
+.ui.button, div.card, input, .ui.label {
+  border-radius: 0px !important;
+}
