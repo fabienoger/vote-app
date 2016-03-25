@@ -1,12 +1,24 @@
 @import "{}/client/views/_layout/config";
 
 div.vote {
+  padding: 0 15px;
+
   div.row {
-    div.ui.cards {
-      div.card {
+    div.column.vote-list {
+      h2 {
+        text-align: center;
+        background-color: $p-color;
+        color: #FFF;
+        padding: 15px 0;
+      }
+      div.ui.cards {
         margin-left: auto;
         margin-right: auto;
-        width: 90%;
+        div.card {
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+        }
       }
     }
   }
