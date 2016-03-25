@@ -13,9 +13,14 @@
                     {{ name }}
                   </div>
                   {{ formatDate endDate }}
-                  {{#each voteOptionsList _id}}
-                    <p>{{ . }}</p>
-                  {{/each}}
+                  <div class="vote-options-list">
+                    {{#each voteOptionsList _id}}
+                      <a data-id="{{ ../_id }}" class="ui label vote-option
+                        {{#if ifVoted ../_id name}}blue{{/if}}">
+                        {{ name }}
+                      </a>
+                    {{/each}}
+                  </div>
                 </div>
               </div>
             {{/each}}
