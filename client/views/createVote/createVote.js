@@ -65,7 +65,8 @@ Template.createVote.events({
         name: voteName.value,
         endDate: new Date(voteEndDate.value),
         options: voteOptions,
-        usersId: []
+        usersId: [],
+        createdBy: Meteor.userId()
       }, function(result, error) {
         if (error) {
           console.log(error);

@@ -50,4 +50,4 @@ function redirectIfIsNotLogin(context) {
   }
 }
 
-FlowRouter.triggers.enter([redirectIfIsNotLogin], {except: ["home", "login", "register"]});
+FlowRouter.triggers.enter([redirectIfIsNotLogin], {except: ["login", "register"]});
