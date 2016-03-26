@@ -42,7 +42,7 @@ FlowRouter.route('/editUser', {
 // Redirect the user if it is not connected
 
 function redirectIfIsNotLogin(context) {
-  if (!Meteor.user()) {
+  if (!Meteor.userId()) {
 // The following line isn't executed
 //    BlazeLayout.render('layout', { main: 'login' }, {force: true});
     FlowRouter.go('login');
@@ -51,4 +51,4 @@ function redirectIfIsNotLogin(context) {
   }
 }
 
-FlowRouter.triggers.enter([redirectIfIsNotLogin], {except: ["login", "register"]});
+FlowRouter.triggers.enter([redirectIfIsNotLogin], {except: ["login", "register", "home"]});
