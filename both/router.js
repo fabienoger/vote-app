@@ -47,6 +47,7 @@ function redirectIfIsNotLogin(context) {
 //    BlazeLayout.render('layout', { main: 'login' }, {force: true});
     FlowRouter.go('login');
   } else {
+    console.log(context);
   }
 }
 
