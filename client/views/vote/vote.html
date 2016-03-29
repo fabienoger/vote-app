@@ -30,9 +30,14 @@
                   <div class="vote-options-list">
                     <div id="vote-options-list-info"></div>
                     {{#each voteOptionsList _id}}
-                      <a data-id="{{ ../_id }}" class="ui button vote-option
+                      <a data-id="{{ ../_id }}" class="ui labeled button vote-option
                         {{#if ifVoted ../_id name}}blue{{/if}}">
-                        {{ name }}
+                        <div class="ui button">
+                          {{ name }}
+                        </div>
+                        <span class="ui basic left pointing label">
+                          {{ voted }}
+                        </span>
                       </a>
                     {{/each}}
                   </div>
