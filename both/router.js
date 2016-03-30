@@ -7,14 +7,6 @@ FlowRouter.route('/', {
 
 // ##### User Routes #####
 
-// Edit An User
-FlowRouter.route('/users/:id/edit', {
-  action: function() {
-    BlazeLayout.render('layout', { main: 'editAnUser', navbar: 'menu' });
-  },
-  name: 'editAnUser'
-});
-
 // Show User List route
 FlowRouter.route('/users', {
   action: function() {
