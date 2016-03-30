@@ -19,9 +19,11 @@ Template.vote.events({
     var vote = Votes.findOne({_id: mongoId});
     var result = false;
     // Check if user has already voted
-    var r = Modules.both.utils.contains(vote.usersId, Meteor.userId());
-    if (r == true)
-      result = true;
+    if (vote.usersId) {
+      var r = Modules.both.utils.contains(vote.usersId, Meteor.userId());
+      if (r == true)
+        result = true;
+    }
 
     if (result == false) {
       // Remove class for all elements
