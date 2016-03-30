@@ -24,6 +24,7 @@ Template.register.events({
             {
               firstName:firstname,
               lastName: lastname,
+              active: true,
               admin: false
             }
           }; //,geolocation:{lat: geoloc.lat, lng: geoloc.lng}

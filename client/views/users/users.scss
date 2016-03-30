@@ -6,6 +6,10 @@ div.users {
       margin-left: 0;
       margin-right: 0;
 
+      div#info-users {
+        margin: 15px 0;
+      }
+
       div.ui.accordion {
         div.content {
           color: #333;

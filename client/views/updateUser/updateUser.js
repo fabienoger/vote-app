@@ -29,16 +29,14 @@ Template.updateUser.events({
         }, function(error, result) {
           if (error) {
             console.log(error);
-            console.log(result);
             Modules.client.utils.displayPanel("update-user-info", "negative", "warning", "Oups, Something went wrong.");
           } else {
-            console.log(result);
-            Modules.client.utils.displayPanel("update-user-info", "positive", "save", "The user been updated.");
+            Modules.client.utils.displayPanel("update-user-info", "positive", "checkmark", "The user been updated.");
           }
         });
       } else {
         // Display info message
-        Modules.client.utils.displayPanel("update-user-info", "negative", "warning", "Tous les champs doivent être remplis.");
+        Modules.client.utils.displayPanel("update-user-info", "negative", "warning", "All fields are required..");
       }
     } else {
       // Redirect to home page

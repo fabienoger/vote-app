@@ -23,20 +23,6 @@ Meteor.methods({
     }
   },
   updateVote: function(mongoId, voteName, userId) {
-/*
-    var vote = Votes.findOne(mongoId),
-    voteIndex = _.indexOf(_.pluck(vote.options, 'name'), voteName),
-    modifier = {
-        "$inc": {},
-        "$push": {}
-    };
-
-    if (voteIndex !== -1) {
-        modifier.$inc["options." + voteIndex + ".voted"] = 1;
-        modifier.$push["options." + voteIndex + ".usersId"] = userId;
-        Votes.update(mongoId, modifier);
-    }
-*/
     try {
       var updateVote = Votes.update({
         _id: mongoId,

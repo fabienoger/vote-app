@@ -18,10 +18,25 @@ Template.users.events({
   },
   // Remove a user
   'click .remove-user': function(e, t) {
+    // Check if e.target.value != null
     if (e.target.dataset.id) {
-      console.log(e.target.dataset.id);
+      // Check if currentUser is Admin
+      if (Meteor.user().profile.admin) {
+        // Set profile.active to false
+        Meteor.call("updateUser", e.target.dataset.id, {'profile.active': false}, function(error, result) {
+          if (error) {
+            console.log(error);
+          } else {
+            Modules.client.utils.displayPanel("info-users", "positive", "checkmark", "The user been updated. Account not active.");
+          }
+        });
+      } else {
+        // Redirect user to home page
+        FlowRouter.go('home');
+      }
     } else {
 //      console.log(e.target);
+       Modules.client.utils.displayPanel("info-users", "negative", "warning", "Oups, Something went wrong.");
     }
   }
 });
@@ -36,6 +51,7 @@ Template.users.helpers({
   'users': function() {
     return Meteor.users.find({}).fetch();
   },
+  // Get the currentUser selected
   'selectedUser': function() {
     return Modules.client.user.updateUser.get();
   }
