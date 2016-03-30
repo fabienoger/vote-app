@@ -1,0 +1,34 @@
+<template name="updateUser">
+  <div class="update-user">
+    <h3>{{ selectedUser._id}}</h3>
+    <form class="ui form" id="update-user">
+      <div id="update-user-info"></div>
+      <div class="field">
+        <label for="account-firstname">Prénom : </label>
+        <input type="text" class="" id="account-firstname" value="{{ selectedUser.profile.firstName }}" />
+      </div>
+      <div class="field">
+        <label for="account-lastname">Nom : </label>
+        <input type="text" class="" id="account-lastname" value="{{ selectedUser.profile.lastName }}" />
+      </div>
+      <div class="field">
+        <label for="account-email">Email : </label>
+        <input type="email" class="" id="account-email" value="{{ selectedUser.emails.[0].address }}" />
+      </div>
+      <div class="ui segment">
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="checkbox" id="account-admin" name="admin" tabindex="0" class="hidden" checked={{selectedUser.profile.admin }} />
+            <label>Admin</label>
+          </div>
+        </div>
+      </div>
+      <div class="action">
+        <button type="submit" class="ui right labeled green icon button">
+          <i class="save icon right"></i>
+          S'inscrire
+        </button>
+      </div>
+    </form>
+  </div>
+</template>
