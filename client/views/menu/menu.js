@@ -9,3 +9,13 @@ Template.menu.events({
     })
   }
 });
+
+Template.menu.helpers({
+  // Return true if currentUser is admin else return false
+  ifAdmin: function() {
+    if (Meteor.user().profile.admin)
+      return true;
+    else
+      return false;
+  }
+});

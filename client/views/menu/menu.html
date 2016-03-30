@@ -6,6 +6,9 @@
         <a class="item" href="/">Home</a>
         {{#if currentUser}}
           <a class="item" href="/editUser">{{ currentUser.profile.firstName }}</a>
+          {{#if ifAdmin}}
+            <a class="item" href="/users">Users</a>
+          {{/if}}
           <div class="right menu">
             <div class="item">
               <a class="ui red button" href="" id="logout">Se déconnecter</a>
