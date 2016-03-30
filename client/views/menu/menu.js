@@ -1,3 +1,8 @@
+Template.menu.rendered = function() {
+  // Initialize dropdown menu users
+  $('.ui.dropdown').dropdown();
+}
+
 Template.menu.events({
   // Logout
   'click #logout' : function(e, tmpl) {
@@ -13,6 +18,8 @@ Template.menu.events({
 Template.menu.helpers({
   // Return true if currentUser is admin else return false
   ifAdmin: function() {
+    // Initialize dropdown menu users
+    $('.ui.dropdown').dropdown();
     if (Meteor.user().profile.admin)
       return true;
     else

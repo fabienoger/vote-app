@@ -7,7 +7,15 @@
         {{#if currentUser}}
           <a class="item" href="/editUser">{{ currentUser.profile.firstName }}</a>
           {{#if ifAdmin}}
-            <a class="item" href="/users">Users</a>
+            <a class="ui dropdown item menu-users-button" href="">
+              Users
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <div class="header">Users</div>
+                <a class="item" href="/users">User List</a>
+                <a class="item" href="/users/new">New User</a>
+              </div>
+            </a>
           {{/if}}
           <div class="right menu">
             <div class="item">
