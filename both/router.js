@@ -7,6 +7,22 @@ FlowRouter.route('/', {
 
 // ##### User Routes #####
 
+// Edit An User
+FlowRouter.route('/users/:id/edit', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'editAnUser', navbar: 'menu' });
+  },
+  name: 'editAnUser'
+});
+
+// Show User List route
+FlowRouter.route('/users', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'users', navbar: 'menu' });
+  },
+  name: 'users'
+});
+
 // Show User route
 FlowRouter.route('/users/:id', {
   action: function() {
@@ -47,8 +63,25 @@ function redirectIfIsNotLogin(context) {
 //    BlazeLayout.render('layout', { main: 'login' }, {force: true});
     FlowRouter.go('login');
   } else {
-    console.log(context);
+//    console.log(context);
   }
 }
 
 FlowRouter.triggers.enter([redirectIfIsNotLogin], {except: ["login", "register", "home"]});
+
+// Redirect the user if it is not admin
+
+function redirectIfIsNotAdmin(context) {
+  if (Meteor.user()) {
+    if (Meteor.user().profile.admin) {
+      return true;
+    } else {
+      FlowRouter.go('home');
+      return false;
+    }
+  } else {
+    FlowRouter.go('home')
+  }
+}
+
+FlowRouter.triggers.enter([redirectIfIsNotAdmin], {only: ["users", "editAnUser"]});

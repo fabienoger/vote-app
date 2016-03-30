@@ -1,0 +1,38 @@
+<template name="users">
+  <div class="users">
+    <h1>Users</h1>
+    <div class="ui styled accordion">
+      {{#each users}}
+        <div class="title">
+          <i class="dropdown icon"></i>
+          {{ profile.firstName }} {{ profile.lastName }}
+        </div>
+        <div class="content">
+          <p>Id : {{ _id }}</p>
+          <p>Email : {{ emails.[0].address }}</p>
+          <p>Admin :
+            {{#if profile.admin }}
+              true
+            {{ else }}
+              false
+            {{/if}}
+          </p>
+          <div class="actions">
+            <a href="/users/{{ _id }}" class="ui button labeled icon blue">
+              <i class="icon eye"></i>
+              See
+            </a>
+            <a href="/users/{{ _id }}/edit" class="ui button labeled icon green">
+              <i class="icon eye"></i>
+              Update
+            </a>
+            <button data-id="{{ _id }}" class="ui button labeled icon red remove-user">
+              <i class="icon remove"></i>
+              Remove
+            </button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
