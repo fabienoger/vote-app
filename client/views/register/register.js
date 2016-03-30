@@ -20,11 +20,11 @@ Template.register.events({
           var user = {
             email: email,
             password: password,
-            admin: false,
             profile:
             {
               firstName:firstname,
-              lastName: lastname
+              lastName: lastname,
+              admin: false
             }
           }; //,geolocation:{lat: geoloc.lat, lng: geoloc.lng}
 
