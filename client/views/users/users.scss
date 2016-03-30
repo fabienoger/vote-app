@@ -1,0 +1,27 @@
+@import "{}/client/views/_layout/config";
+
+div.users {
+  div.row {
+    div.ui.grid {
+      margin-left: 0;
+      margin-right: 0;
+
+      div.ui.accordion {
+        div.content {
+          color: #333;
+        }
+      }
+
+      form#update-user {
+        label {
+          color: #FFF;
+        }
+        div.ui.checkbox {
+          label {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}
