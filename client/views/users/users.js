@@ -23,10 +23,6 @@ Template.users.events({
     } else {
 //      console.log(e.target);
     }
-  },
-  'submit #update-user': function(e, t) {
-    e.preventDefault;
-    
   }
 });
 
@@ -34,7 +30,6 @@ Template.users.helpers({
   // Initialize checkbox in update-user form
   'initializeCheckbox': function() {
     // Initialize checkbox
-    console.log("Initialize checkbox");
     $('.ui.toggle.checkbox').checkbox();
   },
   // Return all users

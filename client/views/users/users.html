@@ -8,12 +8,23 @@
             {{#each users}}
               <div class="title">
                 <i class="dropdown icon"></i>
+                {{#if profile.admin }}
+                  <i class="bordered icon terminal inverted red"></i>
+                {{/if}}
                 {{ profile.firstName }} {{ profile.lastName }}
               </div>
               <div class="content">
-                <p>Id : {{ _id }}</p>
-                <p>Email : {{ emails.[0].address }}</p>
-                <p>Admin :
+                <p>
+                  <i class="icon tag"></i>
+                  Id : {{ _id }}
+                </p>
+                <p>
+                  <i class="icon mail"></i>
+                  Email : {{ emails.[0].address }}
+                </p>
+                <p>
+                  <i class="icon terminal"></i>
+                  Admin :
                   {{#if profile.admin }}
                     true
                   {{ else }}
@@ -26,11 +37,11 @@
                     See
                   </a>
                   <button data-id="{{ _id }}" class="ui button labeled icon green update-user">
-                    <i data-id="{{ _id }}" class="icon eye"></i>
+                    <i data-id="{{ _id }}" class="icon settings"></i>
                     Update
                   </button>
                   <button data-id="{{ _id }}" class="ui button labeled icon red remove-user">
-                    <i data-id="{{ _id }}" class="icon remove"></i>
+                    <i data-id="{{ _id }}" class="icon remove user"></i>
                     Remove
                   </button>
                 </div>
