@@ -7,6 +7,14 @@ FlowRouter.route('/', {
 
 // ##### User Routes #####
 
+// New user
+FlowRouter.route('/users/new', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'newUser', navbar: 'menu' });
+  },
+  name: 'newUser'
+});
+
 // Show User List route
 FlowRouter.route('/users', {
   action: function() {
@@ -76,4 +84,4 @@ function redirectIfIsNotAdmin(context) {
   }
 }
 
-FlowRouter.triggers.enter([redirectIfIsNotAdmin], {only: ["users", "editAnUser"]});
+FlowRouter.triggers.enter([redirectIfIsNotAdmin], {only: ["users", "newUser"]});
