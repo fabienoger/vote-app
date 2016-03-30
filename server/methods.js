@@ -1,4 +1,19 @@
 Meteor.methods({
+  // Update user
+  updateUser: function(userId, object) {
+    console.log("UserID => ", userId);
+    console.log(object);
+
+    // Update User
+    var updatedUser = Meteor.users.update({
+      _id: userId
+    }, {
+      $set: object
+    });
+
+    return updatedUser;
+  },
+  // Insert a new vote
   insertVote: function(object) {
     try {
       console.log("Insert new vote in Votes !");
