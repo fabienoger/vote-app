@@ -18,6 +18,7 @@ Template.vote.events({
     var childs = e.target.parentElement.children;
     var vote = Votes.findOne({_id: mongoId});
     var result = false;
+
     // Check if user has already voted
     if (vote.usersId) {
       var r = Modules.both.utils.contains(vote.usersId, Meteor.userId());
