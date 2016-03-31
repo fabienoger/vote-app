@@ -1,5 +1,28 @@
 @import "config";
 
+body {
+//  background-color: $bg-color;
+  background-image: url("/images/background/stardust.png");
+}
+
+.well {
+  width: 95%;
+  margin: 0 auto;
+
+  div.well-header {
+    margin-top: 15px;
+    background-color: $p-color;
+    padding: 15px;
+    color: #FFF;
+  }
+
+  div.well-content {
+    padding: 20px 15px;
+    border: 2px solid $p-color;
+    margin-bottom: 15px;
+  }
+}
+
 main.ui.container-fluid {
   margin-top: 60px;
 }

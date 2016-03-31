@@ -5,23 +5,28 @@ div.vote {
 
   div.row {
     div.column.vote-list {
-      h2 {
+      div.votes-header {
         text-align: center;
         background-color: $p-color;
         color: #FFF;
-        padding: 15px 0;
+        padding: 20px 15px;
       }
-      div.ui.cards {
-        margin-left: auto;
-        margin-right: auto;
+      div.votes-content {
+//        background-color: #DFDFDF;
+        border: 2px solid $p-color;
+        padding: 15px;
 
-        div.card {
+        div.ui.cards {
           margin-left: auto;
           margin-right: auto;
-          width: 100%;
 
-          div#vote-options-list-info {
-            margin: 15px 0;
+          div.card {
+            margin: 15px auto;
+            width: 95%;
+
+            div#vote-options-list-info {
+              margin: 15px 0;
+            }
           }
         }
       }

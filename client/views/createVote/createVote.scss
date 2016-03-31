@@ -1,21 +1,26 @@
 @import "{}/client/views/_layout/config";
 
 div.create-vote {
-  padding: 0 15px;
-
-  h1 {
-    background-color: $blue;
-    padding: 15px 0;
+  div.create-vote-header {
     text-align: center;
+    background-color: $p-color;
+    color: #FFF;
+    padding: 20px 15px;
   }
-  form#create-vote-form {
-    div#create-vote-info {
-      margin: 15px 0;
-    }
+  div.create-vote-content {
+    padding: 15px;
+    border: 2px solid $p-color;
+//    background-color: #FFF;
 
-    div.field {
-      label {
-        color: #FFF;
+    form#create-vote-form {
+      div#create-vote-info {
+        margin: 15px 0;
+      }
+
+      div.field {
+        label {
+          color: #FFF;
+        }
       }
     }
   }

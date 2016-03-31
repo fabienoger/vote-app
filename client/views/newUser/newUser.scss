@@ -1,10 +1,18 @@
 @import "{}/client/views/_layout/config";
 
 div.new-user {
-  width: 80%;
-  margin: 0 auto;
 
-  form {
+  form#new-user-form {
+    div.field {
+      label {
+        color: #FFF;
+      }
+    }
+    div.checkbox {
+      label {
+        color: #555;
+      }
+    }
     div#new-user-info {
       margin: 15px 0;
     }

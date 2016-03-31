@@ -1,5 +1,21 @@
 @import "{}/client/views/_layout/config";
 
 div.show-user {
+  div.well-header {
+    h1 {
+      color: #FFF !important;
+    }
+  }
+  div.well-content {
+    p {
+      color: #FFF;
+      font-size: 1.2em;
+    }
 
+    div.ui.cards.vote-list {
+      div.card {
+        width: 48.4%;
+      }
+    }
+  }
 }

@@ -2,17 +2,8 @@
 
 div.edit-user {
 
-  h1 {
-    margin: 0;
-    padding: 30px;
-    background-color: #FFF;
-    border-bottom: 3px solid $p-color;
-    color: $p-color;
-    margin-bottom: 30px;
-  }
-
   div.informations div.wrapper, div.preferences div.wrapper {
-    border-bottom: 3px solid $p-color;
+    border: 2px solid $p-color;
     background-color: #FFF;
     padding: 0px;
 
