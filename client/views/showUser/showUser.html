@@ -1,10 +1,67 @@
 <template name="showUser">
-  <div class="show-user">
-    <h1># showUser</h1>
+  <div class="show-user well">
     {{#if getUser}}
-      <h2>{{ getUser.profile.firstName }} {{ getUser.profile.lastName }}</h2>
-    {{else}}
-    
+      <div class="well-header">
+          <h1 class="ui center aligned icon header">
+            <i class="circular icon user"></i>
+            {{ getUser.profile.firstName }} {{ getUser.profile.lastName }}
+          </h1>
+      </div>
+      <div class="well-content">
+        <p>
+          <i class="icon mail large"></i>
+          {{ getUser.emails.[0].address }}
+        </p>
+      </div>
+      <div class="well-header">
+        <h1>
+          <i class="icon list"></i>
+          Votes
+        </h1>
+      </div>
+      <div class="well-content">
+        <div class="ui cards vote-list">
+          <div id="vote-options-list-info"></div>
+          {{#each getUserVotes }}
+            <div class="red card">
+              <div class="content">
+                <div class="header">
+                  {{ name }}
+                </div>
+                <div class="meta">
+                  {{ formatDate endDate }}
+                </div>
+                <div class="description">
+                  <div class="people-who-voted">
+                    <h4>People who voted :</h4>
+                    {{#each userListVote _id}}
+                      <a class="ui label" href="/users/{{ _id }}">
+                        {{ profile.firstName }}
+                        {{ profile.lastName }}
+                      </a>
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+              <div class="extra content">
+                <div class="vote-options-list">
+                  {{#each voteOptionsList _id}}
+                    <a data-id="{{ ../_id }}" data-name="{{ name }}" class="ui labeled button vote-option">
+                      <div data-id="{{ ../_id }}" data-name="{{ name }}" class="ui button
+                        {{#if ifVoted ../_id name}}blue{{/if}}">
+                        {{ name }}
+                      </div>
+                      <span data-id="{{ ../_id }}" data-name="{{ name }}" class="ui basic left pointing label">
+                        {{ voted }}
+                      </span>
+                    </a>
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
     {{/if}}
   </div>
 </template>

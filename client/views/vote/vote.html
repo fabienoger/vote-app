@@ -2,51 +2,55 @@
   <div class="vote">
     <div class="row">
       <div class="ui grid">
-        <div class="nine wide column vote-list teal">
-          <h2>Votes</h2>
-          <div class="ui cards">
-            {{#each votes}}
-              <div class="red card">
-                <div class="content">
-                  <div class="header">
-                    {{ name }}
+        <div class="nine wide column vote-list">
+          <div class="votes-header">
+            <h2>Votes</h2>
+          </div>
+          <div class="votes-content">
+            <div class="ui cards">
+              <div id="vote-options-list-info"></div>
+              {{#each votes}}
+                <div class="red card">
+                  <div class="content">
+                    <div class="header">
+                      {{ name }}
+                    </div>
+                    <div class="meta">
+                      {{ formatDate endDate }}
+                    </div>
+                    <div class="description">
+                      <div class="people-who-voted">
+                        <h4>People who voted :</h4>
+                        {{#each userListVote _id}}
+                          <a class="ui label" href="/users/{{ _id }}">
+                            {{ profile.firstName }}
+                            {{ profile.lastName }}
+                          </a>
+                        {{/each}}
+                      </div>
+                    </div>
                   </div>
-                  <div class="meta">
-                    {{ formatDate endDate }}
-                  </div>
-                  <div class="description">
-                    <div class="people-who-voted">
-                      <h4>People who voted :</h4>
-                      {{#each userListVote _id}}
-                        <a class="ui label" href="/users/{{ _id }}">
-                          {{ profile.firstName }}
-                          {{ profile.lastName }}
+                  <div class="extra content">
+                    <div class="vote-options-list">
+                      {{#each voteOptionsList _id}}
+                        <a data-id="{{ ../_id }}" data-name="{{ name }}" class="ui labeled button vote-option">
+                          <div data-id="{{ ../_id }}" data-name="{{ name }}" class="ui button
+                            {{#if ifVoted ../_id name}}blue{{/if}}">
+                            {{ name }}
+                          </div>
+                          <span data-id="{{ ../_id }}" data-name="{{ name }}" class="ui basic left pointing label">
+                            {{ voted }}
+                          </span>
                         </a>
                       {{/each}}
                     </div>
                   </div>
                 </div>
-                <div class="extra content">
-                  <div class="vote-options-list">
-                    <div id="vote-options-list-info"></div>
-                    {{#each voteOptionsList _id}}
-                      <a data-id="{{ ../_id }}" class="ui labeled button vote-option">
-                        <div data-id="{{ ../_id }}" class="ui button
-                          {{#if ifVoted ../_id name}}blue{{/if}}">
-                          {{ name }}
-                        </div>
-                        <span data-id="{{ ../_id }}" class="ui basic left pointing label">
-                          {{ voted }}
-                        </span>
-                      </a>
-                    {{/each}}
-                  </div>
-                </div>
-              </div>
-            {{/each}}
+              {{/each}}
+            </div>
           </div>
         </div>
-        <div class="seven wide column blue">
+        <div class="seven wide column">
           {{> createVote}}
         </div>
 <!--

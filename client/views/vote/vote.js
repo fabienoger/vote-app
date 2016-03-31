@@ -34,10 +34,8 @@ Template.vote.events({
       }
       // Add class to option .selected-option
       e.target.className += " blue selected-option";
-      console.log(e);
-      console.log(e.target.innerText);
       // update mongo object
-      Meteor.call("updateVote", mongoId, e.target.innerText, Meteor.userId(), function(result, error) {
+      Meteor.call("updateVote", mongoId, e.target.dataset.name, Meteor.userId(), function(result, error) {
         if (error) {
           console.log(error);
         } else {
@@ -64,13 +62,6 @@ Template.vote.helpers({
     // Loop on vote.options
     _.map(vote.usersId, function(userId) {
       usersWhoVoted.push(Meteor.users.findOne({_id: userId}));
-/* OLD select on options[i].usersId
-      // Loop on usersId array
-      _.map(option.usersId, function(userId) {
-        // Get each userId and push in array
-        usersWhoVoted.push(Meteor.users.findOne({_id: userId}));
-      });
-*/
     });
     return usersWhoVoted;
   },
