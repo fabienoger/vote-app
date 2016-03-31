@@ -1,50 +1,57 @@
 <template name="newUser">
-  <div class="new-user">
-    <h1>Create New User</h1>
-    <form id="new-user-form" action="action" class="ui form">
-      <div id="new-user-info"></div>
-      <div class="field">
-        <label for="account-firstname">First Name : </label>
-        <input type="text" class="" id="account-firstname" />
-      </div>
-      <div class="field">
-        <label for="account-lastname">Last Name : </label>
-        <input type="text" class="" id="account-lastname" />
-      </div>
-      <div class="field">
-        <label for="account-email">Email : </label>
-        <input type="email" class="" id="account-email" />
-      </div>
-      <div class="field">
-        <label for="account-password">Password : </label>
-        <input type="password" class="" id="account-password" />
-      </div>
-      <div class="field">
-        <label for="confirm-password">Confirm you're password : </label>
-        <input type="password" class="" id="confirm-password" />
-      </div>
-      <div class="ui segment">
+  <div class="new-user well">
+    <div class="well-header">
+      <h1>
+        <i class="icon add user"></i>
+        Create New User
+      </h1>
+    </div>
+    <div class="well-content">
+      <form id="new-user-form" action="action" class="ui form">
+        <div id="new-user-info"></div>
         <div class="field">
-          <div class="ui toggle checkbox">
-            <input type="checkbox" id="account-admin" name="admin" tabindex="0" class="hidden" />
-            <label>Admin</label>
+          <label for="account-firstname">First Name : </label>
+          <input type="text" class="" id="account-firstname" />
+        </div>
+        <div class="field">
+          <label for="account-lastname">Last Name : </label>
+          <input type="text" class="" id="account-lastname" />
+        </div>
+        <div class="field">
+          <label for="account-email">Email : </label>
+          <input type="email" class="" id="account-email" />
+        </div>
+        <div class="field">
+          <label for="account-password">Password : </label>
+          <input type="password" class="" id="account-password" />
+        </div>
+        <div class="field">
+          <label for="confirm-password">Confirm you're password : </label>
+          <input type="password" class="" id="confirm-password" />
+        </div>
+        <div class="ui segment">
+          <div class="field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" id="account-admin" name="admin" tabindex="0" class="hidden" />
+              <label>Admin</label>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="ui segment">
-        <div class="field">
-          <div class="ui toggle checkbox">
-            <input type="checkbox" id="account-active" name="active" tabindex="0" class="hidden" checked />
-            <label>Active</label>
+        <div class="ui segment">
+          <div class="field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" id="account-active" name="active" tabindex="0" class="hidden" checked />
+              <label>Active</label>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="action">
-        <button type="submit" class="ui right labeled green icon button" id="submit-new-user-form">
-          <i class="plus icon right"></i>
-          Create
-        </button>
-      </div>
-    </form>
+        <div class="action">
+          <button type="submit" class="ui right labeled green icon button" id="submit-new-user-form">
+            <i class="add user icon right"></i>
+            Create
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>

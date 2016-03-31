@@ -3,6 +3,7 @@
 ****************************************/
 
 Template.createVote.rendered = function() {
+  // Initialize datetime picker
   $('.datetimepicker').datetimepicker();
 }
 
@@ -74,7 +75,7 @@ Template.createVote.events({
             console.log(error);
           } else {
             console.log(result);
-            Modules.client.utils.displayPanel("create-vote-info", "negative", "warning", "The creation of the vote has been recorded.")
+            Modules.client.utils.displayPanel("create-vote-info", "positive", "warning", "The creation of the vote has been recorded.")
           }
         });
 

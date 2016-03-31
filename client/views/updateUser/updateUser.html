@@ -1,34 +1,38 @@
 <template name="updateUser">
-  <div class="update-user">
-    <h1>Update {{ selecteduser.profile.firstName }} {{ selecteduser.profile.firstName }}</h1>
-    <form class="ui form" id="update-user">
-      <div id="update-user-info"></div>
-      <div class="field">
-        <label for="account-firstname">First Name : </label>
-        <input type="text" id="account-firstname" value="{{ selectedUser.profile.firstName }}" />
-      </div>
-      <div class="field">
-        <label for="account-lastname">Last Name : </label>
-        <input type="text" id="account-lastname" value="{{ selectedUser.profile.lastName }}" />
-      </div>
-      <div class="field">
-        <label for="account-email">Email : </label>
-        <input type="email" id="account-email" value="{{ selectedUser.emails.[0].address }}" />
-      </div>
-      <div class="ui segment">
+  <div class="update-user well">
+    <div class="well-header">
+      <h1>Update {{ selecteduser.profile.firstName }} {{ selecteduser.profile.firstName }}</h1>
+    </div>
+    <div class="well-content">
+      <form class="ui form" id="update-user">
+        <div id="update-user-info"></div>
         <div class="field">
-          <div class="ui toggle checkbox">
-            <input type="checkbox" id="account-admin" name="admin" tabindex="0" class="hidden" checked={{selectedUser.profile.admin }} />
-            <label>Admin</label>
+          <label for="account-firstname">First Name : </label>
+          <input type="text" id="account-firstname" value="{{ selectedUser.profile.firstName }}" />
+        </div>
+        <div class="field">
+          <label for="account-lastname">Last Name : </label>
+          <input type="text" id="account-lastname" value="{{ selectedUser.profile.lastName }}" />
+        </div>
+        <div class="field">
+          <label for="account-email">Email : </label>
+          <input type="email" id="account-email" value="{{ selectedUser.emails.[0].address }}" />
+        </div>
+        <div class="ui segment">
+          <div class="field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" id="account-admin" name="admin" tabindex="0" class="hidden" checked={{selectedUser.profile.admin }} />
+              <label>Admin</label>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="action">
-        <button type="submit" class="ui right labeled green icon button">
-          <i class="save icon right"></i>
-          Save
-        </button>
-      </div>
-    </form>
+        <div class="action">
+          <button type="submit" class="ui right labeled green icon button">
+            <i class="save icon right"></i>
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>

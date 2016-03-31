@@ -1,44 +1,51 @@
 <template name="editUser">
-  <div class="edit-user">
-    <h1>My profile</h1>
-    <div class="informations">
-      <div class="wrapper">
-        <div class="header">
-          <h2 class="valign-wrapper center-align">
-            <i class="icon info circle large"></i>
-            My information
-          </h2>
-        </div>
-        <div class="body">
-          <p class="valign-wrapper">
-            <span>Email :&nbsp;</span>
-            {{ getCurrentUserEmail }}
-          </p>
-          <form id="change-password-form" class="change-password-form ui form">
-            <h3>Change you're password</h3>
-            <div id="info-password"></div>
-            <div class="field">
-              <label for="oldPassword">Old Password :</label>
-              <input type="password" class="" id="oldPassword" />
-            </div>
-            <div class="field">
-              <label for="newPassword">New Password :</label>
-              <input type="password" class="" id="newPassword" />
-            </div>
-            <div class="field">
-              <label for="confirmPassword">Confirm you're new password :</label>
-              <input type="password" class="" id="confirmPassword" />
-            </div>
-            <div id="info-confirm-password"></div>
-            <div class="field">
-              <button type="submit" class="ui right labeled green icon button" id="change-password-button">
-                <i class="save icon right"></i>
-                Save
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="footer">
+  <div class="edit-user well">
+    <div class="well-header">
+      <h1>
+        <i class="icon user"></i>
+        My profile
+      </h1>
+    </div>
+    <div class="well-content">
+      <div class="informations">
+        <div class="wrapper">
+          <div class="header">
+            <h2 class="valign-wrapper center-align">
+              <i class="icon info circle large"></i>
+              My information
+            </h2>
+          </div>
+          <div class="body">
+            <p class="valign-wrapper">
+              <span>Email :&nbsp;</span>
+              {{ getCurrentUserEmail }}
+            </p>
+            <form id="change-password-form" class="change-password-form ui form">
+              <h3>Change you're password</h3>
+              <div id="info-password"></div>
+              <div class="field">
+                <label for="oldPassword">Old Password :</label>
+                <input type="password" class="" id="oldPassword" />
+              </div>
+              <div class="field">
+                <label for="newPassword">New Password :</label>
+                <input type="password" class="" id="newPassword" />
+              </div>
+              <div class="field">
+                <label for="confirmPassword">Confirm you're new password :</label>
+                <input type="password" class="" id="confirmPassword" />
+              </div>
+              <div id="info-confirm-password"></div>
+              <div class="field">
+                <button type="submit" class="ui right labeled green icon button" id="change-password-button">
+                  <i class="save icon right"></i>
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="footer">
+          </div>
         </div>
       </div>
     </div>
