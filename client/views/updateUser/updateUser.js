@@ -1,6 +1,5 @@
 Template.updateUser.rendered = function() {
   // Initialize checkbox
-  console.log("Initialize checkbox");
   $('.ui.toggle.checkbox').checkbox();
 }
 

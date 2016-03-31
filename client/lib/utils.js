@@ -20,10 +20,10 @@ Modules.client.utils = {
     // Insert panel
     $elmt.innerHTML = "<div class='ui floating message "
       + type + "'><i class='close icon'></i>"
-      + "<p>"
+      + "<div>"
       + "<i class='icon "
       + icon + "'></i>"
-      + message + "</p>"
+      + message + "</div>"
       + "</div>";
 
     // Initialize semantic-ui close

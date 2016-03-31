@@ -46,7 +46,6 @@ Template.vote.events({
       });
     } else {
       // Add display panel
-      console.log("Vous avez déjà voté !");
       Modules.client.utils.displayPanel("vote-options-list-info", "negative", "warning", "You have already voted !");
     }
   }

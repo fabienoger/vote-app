@@ -9,6 +9,10 @@ div.create-vote {
     text-align: center;
   }
   form#create-vote-form {
+    div#create-vote-info {
+      margin: 15px 0;
+    }
+
     div.field {
       label {
         color: #FFF;

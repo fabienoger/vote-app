@@ -14,10 +14,15 @@ div.vote {
       div.ui.cards {
         margin-left: auto;
         margin-right: auto;
+
         div.card {
           margin-left: auto;
           margin-right: auto;
           width: 100%;
+
+          div#vote-options-list-info {
+            margin: 15px 0;
+          }
         }
       }
     }
