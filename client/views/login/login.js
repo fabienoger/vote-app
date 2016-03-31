@@ -15,15 +15,15 @@ Template.login.events({
             FlowRouter.go('/');
           } else {
             if (err.error == 403) {
-              Modules.client.utils.displayPanel("login-info", "negative", "lock", "L'email ou le mot de passe est incorrect.");
+              Modules.client.utils.displayPanel("login-info", "negative", "lock", "The email or the password are incorrect.");
             }
           }
         });
       } else {
-        Modules.client.utils.displayPanel("login-info", "negative", "warning", "L'adresse email n'est pas valide.");
+        Modules.client.utils.displayPanel("login-info", "negative", "warning", "The email is not valid.");
       }
     } else {
-      Modules.client.utils.displayPanel("login-info", "negative", "warning", "Tous les champs doivent être remplis.");
+      Modules.client.utils.displayPanel("login-info", "negative", "warning", "All fields are required.");
     }
   }
 });

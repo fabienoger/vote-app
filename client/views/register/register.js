@@ -35,21 +35,21 @@ Template.register.events({
             } else {
               console.log(err);
               if (err.error == 400) {
-                Modules.client.utils.displayPanel("register-info", "negative", "warning", "Veuillez remplir les champ mot de passe.");
+                Modules.client.utils.displayPanel("register-info", "negative", "warning", "The password fields must be required.");
 
               } else if (err.error == 403) {
-                Modules.client.utils.displayPanel("register-info", "negative", "warning", "L'email saisi est déjà utilisé.");
+                Modules.client.utils.displayPanel("register-info", "negative", "warning", "This e-mail address is already registered.");
               }
             }
           });
         } else {
-          Modules.client.utils.displayPanel("register-info", "negative", "warning", "L'email n'est pas valide.");
+          Modules.client.utils.displayPanel("register-info", "negative", "warning", "The email is not valid.");
         }
       } else {
-        Modules.client.utils.displayPanel("register-info", "negative", "warning", "Tous les champs doivent être remplis.");
+        Modules.client.utils.displayPanel("register-info", "negative", "warning", "All fields are required.");
       }
     } else {
-      Modules.client.utils.displayPanel("register-info", "negative", "warning", "Les mots de passe doivent être identique.");
+      Modules.client.utils.displayPanel("register-info", "negative", "warning", "The Password and Confirm Password fields must always be equal.");
     }
   }
 });
