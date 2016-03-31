@@ -38,7 +38,7 @@ Template.register.events({
                 Modules.client.utils.displayPanel("register-info", "negative", "warning", "The password fields must be required.");
 
               } else if (err.error == 403) {
-                Modules.client.utils.displayPanel("register-info", "negative", "warning", "This e-mail address is already registered.");
+                Modules.client.utils.displayPanel("register-info", "negative", "warning", "This email address is already registered.");
               }
             }
           });

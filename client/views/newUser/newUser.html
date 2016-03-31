@@ -1,6 +1,6 @@
 <template name="newUser">
   <div class="new-user">
-    <h1># New User</h1>
+    <h1>Create New User</h1>
     <form id="new-user-form" action="action" class="ui form">
       <div id="new-user-info"></div>
       <div class="field">
@@ -23,8 +23,24 @@
         <label for="confirm-password">Confirm you're password : </label>
         <input type="password" class="" id="confirm-password" />
       </div>
+      <div class="ui segment">
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="checkbox" id="account-admin" name="admin" tabindex="0" class="hidden" />
+            <label>Admin</label>
+          </div>
+        </div>
+      </div>
+      <div class="ui segment">
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="checkbox" id="account-active" name="active" tabindex="0" class="hidden" checked />
+            <label>Active</label>
+          </div>
+        </div>
+      </div>
       <div class="action">
-        <button type="submit" class="ui right labeled green icon button">
+        <button type="submit" class="ui right labeled green icon button" id="submit-new-user-form">
           <i class="plus icon right"></i>
           Create
         </button>

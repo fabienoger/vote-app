@@ -1,0 +1,12 @@
+@import "{}/client/views/_layout/config";
+
+div.new-user {
+  width: 80%;
+  margin: 0 auto;
+
+  form {
+    div#new-user-info {
+      margin: 15px 0;
+    }
+  }
+}

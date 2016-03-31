@@ -1,4 +1,9 @@
 Meteor.methods({
+  // Create user
+  createNewUser: function(user) {
+    var userId = Accounts.createUser(user);
+    return userId;
+  },
   // Update user
   updateUser: function(userId, object) {
     console.log("UserID => ", userId);
