@@ -1,6 +1,27 @@
 @import "{}/client/views/_layout/config";
 
 header {
+  div.mobile.only.row {
+    a.brand.item, div.menu.open {
+      transition: all .25s;
+      background-color: $p-color;
+      color: #FFF;
+      i {
+        color: #FFF;
+      }
+
+      &:hover {
+        background-color: #FFF;
+        color: $p-color;
+        i {
+          color: $p-color;
+        }
+      }
+    }
+    div.ui.fixed.navbar.menu {
+      border: none;
+    }
+  }
   div.menu#navbar, div.ui.vertical.menu.navbar {
     border: none;
     div.menu.right {
