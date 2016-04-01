@@ -1,6 +1,11 @@
 Template.menu.rendered = function() {
   // Initialize dropdown menu users
   $('.ui.dropdown').dropdown();
+  // Menu responsive
+  $('.right.menu.open').on("click",function(e){
+    e.preventDefault();
+    $('.ui.vertical.menu').toggle();
+  });
 }
 
 Template.menu.events({

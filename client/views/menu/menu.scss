@@ -1,7 +1,24 @@
 @import "{}/client/views/_layout/config";
 
-div.menu#navbar {
-  div.menu.right {
-    float: right;
+header {
+  div.menu#navbar {
+    div.menu.right {
+      float: right;
+    }
+  }
+
+  .ui.vertical.menu{
+    margin-top: -6px !important;
+    width: 100%;
+    display: none;
+    transition: all .5s;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .ui.grid { margin: 0 !important; }
+  .ui.vertical.menu.navbar{
+    margin-top: 25px !important;
   }
 }
