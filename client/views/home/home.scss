@@ -1,0 +1,9 @@
+@import "{}/client/views/_layout/config";
+
+div.home {
+  div.row {
+    div.ui.grid {
+      max-width: 100%;
+    }
+  }
+}

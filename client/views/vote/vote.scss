@@ -2,32 +2,31 @@
 
 div.vote {
   padding: 0 15px;
-
-  div.row {
-    div.column.vote-list {
-      div.votes-header {
-        text-align: center;
-        background-color: $p-color;
-        color: #FFF;
-        padding: 20px 15px;
-      }
-      div.votes-content {
+  div.votes-header {
+    text-align: center;
+    background-color: $p-color;
+    color: #FFF;
+    padding: 20px 15px;
+  }
+  div.votes-content {
 //        background-color: #DFDFDF;
-        border: 2px solid $p-color;
-        padding: 15px;
+    border: 2px solid $p-color;
+    padding: 15px;
 
-        div#vote-options-list-info {
-          margin-bottom: 15px;
-        }
+    div#vote-options-list-info {
+      margin-bottom: 15px;
+    }
 
-        div.ui.cards {
-          margin-left: auto;
-          margin-right: auto;
+    div.ui.cards {
+      margin-left: auto;
+      margin-right: auto;
 
-          div.card {
-            margin: 15px auto;
-            width: 95%;
-          }
+      div.card {
+        margin: 15px auto;
+        width: 95%;
+
+        a.ui.label {
+          margin: 5px 0;
         }
       }
     }

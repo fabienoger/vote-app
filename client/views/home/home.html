@@ -1,7 +1,16 @@
 <template name="home">
   <div class="home">
     {{#if userConnected}}
-      {{> vote}}
+      <div class="row">
+        <div class="ui grid">
+          <div class="nine wide column vote-list">
+            {{> vote}}
+          </div>
+          <div class="seven wide column">
+            {{> createVote }}
+          </div>
+        </div>
+      </div>
     {{ else }}
       {{> loginLinks }}
     {{/if}}
