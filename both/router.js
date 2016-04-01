@@ -8,6 +8,14 @@ FlowRouter.route('/', {
 // ##### Vote Routes #####
 
 // List votes
+FlowRouter.route('/votes/myVotes', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'myVotes', navbar: 'menu' });
+  },
+  name: 'myVotes'
+});
+
+// List votes
 FlowRouter.route('/votes', {
   action: function() {
     BlazeLayout.render('layout', { main: 'votes', navbar: 'menu' });
