@@ -1,4 +1,6 @@
 Template.home.rendered = function() {
+  // Set .active to home item
+  Modules.client.utils.setActive("home");
 }
 
 // Check if user is connected

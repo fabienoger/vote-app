@@ -1,6 +1,9 @@
 Template.users.rendered = function() {
   // Initialize dropdown semantic-ui
   $('.ui.accordion').accordion();
+
+  // Set .active to users dropdown
+  Modules.client.utils.setActive("userList");
 }
 
 Template.users.events({

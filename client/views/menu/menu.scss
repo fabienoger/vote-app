@@ -1,9 +1,50 @@
 @import "{}/client/views/_layout/config";
 
 header {
-  div.menu#navbar {
+  div.menu#navbar, div.ui.vertical.menu.navbar {
+    border: none;
     div.menu.right {
       float: right;
+    }
+    a.item {
+      transition: all .15s;
+      i {
+        color: $p-color;
+      }
+    }
+    a.item.active, a.item:hover {
+      background-color: $p-color;
+      color: #FFF;
+      i {
+        color: #FFF;
+      }
+    }
+    .ui.dropdown.item.active,  {
+      background-color: $p-color;
+      color: #FFF;
+    }
+    .ui.dropdown.item.active, .ui.dropdown.item:hover {
+      i {
+        color: #FFF;
+      }
+    }
+    a.ui.item {
+      div.menu.transition {
+        border: none;
+      }
+      a.item {
+        transition: all .15s !important;
+        i {
+          color: $p-color !important;
+        }
+      }
+      a.item.active, a.item:hover {
+        background-color: $p-color !important;
+        color: #FFF !important;
+        i {
+          color: #FFF !important;
+        }
+      }
     }
   }
 

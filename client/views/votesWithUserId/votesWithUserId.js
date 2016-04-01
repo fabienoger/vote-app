@@ -50,7 +50,6 @@ Template.votesWithUserId.events({
 Template.votesWithUserId.helpers({
   // Return votes for one user
   getUserVotes: function(userId) {
-    console.log(userId);
     // Mongo request
     var votes = Votes.find({usersId: userId});
     return votes;

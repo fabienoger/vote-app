@@ -1,4 +1,20 @@
 Modules.client.utils = {
+  // Set .active class to HTML element
+  setActive: function(idElmt) {
+    // Get DOM elements
+    var element = document.getElementById(idElmt);
+    var mobileElement = document.getElementById("mobile-" + idElmt);
+    var items = document.getElementsByClassName("item");
+
+    // Remove class .active for all .item
+    for(var i = 0; i < items.length; i++) {
+      items[i].classList.remove("active");
+    }
+
+    // Set .active class to element and "mobile-" + element
+    element.classList.add("active");
+    mobileElement.classList.add("active");
+  },
   // Display one info panel with arguments idElmt(html), color, icon, message
   displayPanel: function(idElmt, type, icon, message) {
     var timeoutClearPanel;

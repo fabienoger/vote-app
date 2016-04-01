@@ -2,29 +2,51 @@
   <header>
     <div class="ui grid">
       <div class="row computer tablet only">
-        <div id="navbar" class="menu ui fixed inverted navbar">
-          <a href="/" class="launch item"><i class="home icon"></i></a>
-          <a class="item" href="/">Home</a>
+        <div id="navbar" class="menu ui fixed navbar">
+          <a href="/" class="item" id="home">
+            <i class="home icon"></i>
+            Home
+          </a>
           {{#if currentUser}}
-            <a class="item" href="/editUser">{{ currentUser.profile.firstName }}</a>
-            <a class="ui dropdown item menu-users-button" href="">
+            <a class="item" id="editUser" href="/editUser">
+              <i class="icon user"></i>
+              {{ currentUser.profile.firstName }}
+            </a>
+            <a class="ui dropdown item" href="">
+              <i class="icon folder"></i>
               Votes
               <i class="dropdown icon"></i>
               <div class="menu">
                 <div class="header">Votes</div>
-                <a class="item" href="/votes/new">New Vote</a>
-                <a class="item" href="/votes/myVotes">My Votes</a>
-                <a class="item" href="/votes">Vote List</a>
+                <a class="item" id="newVote" href="/votes/new">
+                  <i class="icon plus"></i>
+                  New Vote
+                </a>
+                <a class="item" id="myVotes" href="/votes/myVotes">
+                  <i class="icon folder"></i>
+                  My Votes
+                </a>
+                <a class="item" id="voteList" href="/votes">
+                  <i class="icon list"></i>
+                  Vote List
+                </a>
               </div>
             </a>
             {{#if ifAdmin}}
-              <a class="ui dropdown item menu-users-button" href="">
+              <a class="ui dropdown item" href="">
+                <i class="icon users"></i>
                 Users
                 <i class="dropdown icon"></i>
                 <div class="menu">
                   <div class="header">Users</div>
-                  <a class="item" href="/users/new">New User</a>
-                  <a class="item" href="/users">User List</a>
+                  <a class="item" id="newUser" href="/users/new">
+                    <i class="icon user add"></i>
+                    New User
+                  </a>
+                  <a class="item" id="userList" href="/users">
+                    <i class="icon users"></i>
+                    User List
+                  </a>
                 </div>
               </a>
             {{/if}}
@@ -49,8 +71,8 @@
         </div>
       </div>
       <div class="mobile only row">
-        <div class="ui fixed inverted navbar menu">
-          <a href="" class="brand item">Project Name</a>
+        <div class="ui fixed navbar menu">
+          <a href="" class="brand item">Vote App</a>
           <div class="right menu open">
               <a href="" class="menu item">
                   <i class="content icon"></i>
@@ -58,25 +80,48 @@
           </div>
         </div>
         <div class="ui vertical navbar menu">
-          <a class="item" href="/">Home</a>
+          <a href="/" class="item" id="mobile-home">
+            <i class="home icon"></i>
+            Home
+          </a>
           {{#if currentUser}}
-            <a class="item" href="/editUser">{{ currentUser.profile.firstName }}</a>
-            <a class="ui item menu-users-button" href="">
+            <a class="item" id="mobile-editUser" href="/editUser">
+              <i class="icon user"></i>
+              {{ currentUser.profile.firstName }}
+            </a>
+            <a class="ui item" href="">
+              <i class="icon folder"></i>
               Votes
               <i class="dropdown icon"></i>
               <div class="menu">
-                <a class="item" href="/votes/new">New Vote</a>
-                <a class="item" href="/votes/myVotes">My Votes</a>
-                <a class="item" href="/votes">Vote List</a>
+                <a class="item" id="mobile-newVote" href="/votes/new">
+                  <i class="icon plus"></i>
+                  New Vote
+                </a>
+                <a class="item" id="mobile-myVotes" href="/votes/myVotes">
+                  <i class="icon folder"></i>
+                  My Votes
+                </a>
+                <a class="item" id="mobile-voteList" href="/votes">
+                  <i class="icon list"></i>
+                  Vote List
+                </a>
               </div>
             </a>
             {{#if ifAdmin}}
-              <a class="ui item menu-users-button" href="">
+              <a class="ui item" href="">
+                <i class="icon users"></i>
                 Users
                 <i class="dropdown icon"></i>
                 <div class="menu">
-                  <a class="item" href="/users/new">New User</a>
-                  <a class="item" href="/users">User List</a>
+                  <a class="item" id="mobile-newUser" href="/users/new">
+                    <i class="icon user add"></i>
+                    New User
+                  </a>
+                  <a class="item" id="mobile-userList" href="/users">
+                    <i class="icon users"></i>
+                    User List
+                  </a>
                 </div>
               </a>
             {{/if}}

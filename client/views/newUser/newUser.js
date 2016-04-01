@@ -1,6 +1,9 @@
 Template.newUser.rendered = function() {
   // Initialize checkbox
   $('.ui.toggle.checkbox').checkbox();
+
+  // Set .active to users dropdown
+  Modules.client.utils.setActive("newUser");
 }
 
 Template.newUser.events({

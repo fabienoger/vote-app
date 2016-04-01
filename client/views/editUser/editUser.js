@@ -1,3 +1,8 @@
+Template.editUser.rendered = function() {
+  // Set .active to editUser item
+  Modules.client.utils.setActive("editUser");
+}
+
 /****************************************
 #####            HELPERS            #####
 ****************************************/
