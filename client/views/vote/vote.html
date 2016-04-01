@@ -1,7 +1,10 @@
 <template name="vote">
   <div class="vote">
     <div class="votes-header">
-      <h2>Votes</h2>
+      <h1>
+        <i class="icon list"></i>
+        Votes
+      </h1>
     </div>
     <div class="votes-content">
       <div id="vote-options-list-info"></div>
@@ -10,10 +13,14 @@
           <div class="red card">
             <div class="content">
               <div class="header">
+                <i class="icon bar chart"></i>
                 {{ name }}
               </div>
               <div class="meta">
-                {{ formatDate endDate }}
+                <p>
+                  <i class="icon wait"></i>
+                  End Date : {{ formatDate endDate }}
+                </p>
               </div>
               <div class="description">
                 <div class="people-who-voted">

@@ -80,6 +80,7 @@ Template.createVote.events({
         Meteor.call("insertVote", {
           name: voteName.value,
           endDate: new Date(voteEndDate.value),
+          createdAd: new Date(),
           options: voteOptions,
           usersId: [],
           createdBy: Meteor.userId()

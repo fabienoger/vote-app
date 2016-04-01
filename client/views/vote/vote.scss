@@ -3,7 +3,6 @@
 div.vote {
   padding: 0 15px;
   div.votes-header {
-    text-align: center;
     background-color: $p-color;
     color: #FFF;
     padding: 20px 15px;
@@ -23,7 +22,13 @@ div.vote {
 
       div.card {
         margin: 15px auto;
-        width: 95%;
+        width: 100%;
+
+        div.content {
+          div.header {
+            margin-bottom: 10px;
+          }
+        }
 
         a.ui.label {
           margin: 5px 0;

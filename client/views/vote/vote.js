@@ -81,7 +81,7 @@ Template.vote.helpers({
   },
   // Return all votes in Votes collection
   votes: function() {
-    return Votes.find().fetch();
+    return Votes.find().fetch().reverse();
   },
   // Return mongo vote object
   voteOptionsList: function(id) {
