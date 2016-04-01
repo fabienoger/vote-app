@@ -19,6 +19,10 @@ div.show-user {
     div.ui.cards.vote-list {
       div.card {
         width: 48.4%;
+
+        a.ui.label {
+          margin: 5px 0;
+        }
       }
     }
   }

@@ -6,6 +6,15 @@
         <a class="item" href="/">Home</a>
         {{#if currentUser}}
           <a class="item" href="/editUser">{{ currentUser.profile.firstName }}</a>
+          <a class="ui dropdown item menu-users-button" href="">
+            Votes
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="header">Votes</div>
+              <a class="item" href="/votes">Vote List</a>
+              <a class="item" href="/votes/new">New Vote</a>
+            </div>
+          </a>
           {{#if ifAdmin}}
             <a class="ui dropdown item menu-users-button" href="">
               Users
@@ -19,7 +28,10 @@
           {{/if}}
           <div class="right menu">
             <div class="item">
-              <a class="ui red button" href="" id="logout">Logout</a>
+              <a class="ui red button labeled icon" href="" id="logout">
+                <i class="icon sign out"></i>
+                Logout
+              </a>
             </div>
           </div>
         {{else}}
