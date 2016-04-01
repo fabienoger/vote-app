@@ -10,6 +10,10 @@ div.users {
       div.ui.accordion {
         div.content {
           color: #333;
+
+          .ui.button {
+            margin-top: 5px;
+          }
         }
       }
 

@@ -1,0 +1,40 @@
+@import "{}/client/views/_layout/config";
+
+
+div.votes-with-user-id {
+  div.ui.cards.vote-list {
+    div.card {
+      width: 32.2%;
+    }
+  }
+}
+
+@media screen and (max-width: 1299px) {
+  div.votes-with-user-id {
+    div.ui.cards.vote-list {
+      div.card {
+        width: 48.5%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 997px) {
+  div.votes-with-user-id {
+    div.ui.cards.vote-list {
+      div.card {
+        width: 48%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 764px) {
+  div.votes-with-user-id {
+    div.ui.cards.vote-list {
+      div.card {
+        width: 100%;
+      }
+    }
+  }
+}
