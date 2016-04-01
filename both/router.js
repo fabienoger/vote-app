@@ -5,6 +5,16 @@ FlowRouter.route('/', {
   name: 'home'
 });
 
+// ##### Vote Routes #####
+
+// List votes
+FlowRouter.route('/votes', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'votes', navbar: 'menu' });
+  },
+  name: 'votes'
+});
+
 // ##### User Routes #####
 
 // New user
