@@ -15,6 +15,14 @@ FlowRouter.route('/votes', {
   name: 'votes'
 });
 
+// New vote
+FlowRouter.route('/votes/new', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'newVote', navbar: 'menu' });
+  },
+  name: 'newVote'
+});
+
 // ##### User Routes #####
 
 // New user

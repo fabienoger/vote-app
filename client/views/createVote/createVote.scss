@@ -1,6 +1,8 @@
 @import "{}/client/views/_layout/config";
 
 div.create-vote {
+  width: 100%;
+
   div.create-vote-header {
     background-color: $p-color;
     color: #FFF;
