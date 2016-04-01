@@ -19,13 +19,14 @@
             </button>
           </div>
         </div>
+        <div id="vote-option-list-info"></div>
         {{#if voteOptionList}}
           <div id="new-vote-option-list" class="ui horizontal list">
             {{#each voteOptionList }}
               <div class="item">
-                <a class="ui label vote">
+                <a data-name="{{ name }}" class="ui label vote">
                   {{ name }}
-                  <i class="delete icon"></i>
+                  <i data-name="{{ name }}" class="delete icon remove-option"></i>
                 </a>
               </div>
             {{/each}}
