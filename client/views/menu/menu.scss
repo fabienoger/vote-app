@@ -21,6 +21,38 @@ header {
     div.ui.fixed.navbar.menu {
       border: none;
     }
+    div.ui.vertical.menu.navbar {
+      a.item#mobile-home {
+        border-radius: 0;
+      }
+      a.item {
+        a.item {
+          font-size: 1.1em;
+        }
+        i {
+          float: left;
+          margin-right: 10px;
+        }
+        i.icon.dropdown {
+          float: right;
+          margin-right: 0px;
+        }
+      }
+      a.item:hover {
+        a.item {
+          i {
+            color: #FFF !important;
+          }
+          &:hover {
+            background-color: #FFF !important;
+            color: $p-color !important;
+            i {
+              color: $p-color !important;
+            }
+          }
+        }
+      }
+    }
   }
   div.menu#navbar, div.ui.vertical.menu.navbar {
     border: none;
@@ -81,6 +113,6 @@ header {
 @media (max-width: 767px) {
   .ui.grid { margin: 0 !important; }
   .ui.vertical.menu.navbar{
-    margin-top: 25px !important;
+    margin-top: 26px !important;
   }
 }
