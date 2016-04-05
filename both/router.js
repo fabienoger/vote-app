@@ -5,6 +5,14 @@ FlowRouter.route('/', {
   name: 'home'
 });
 
+// FeedBacks
+FlowRouter.route('/feedBacks', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'feedBacks', navbar: 'menu' });
+  },
+  name: 'feedBacks'
+});
+
 // ##### Vote Routes #####
 
 // List votes

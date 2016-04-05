@@ -1,4 +1,9 @@
 Meteor.methods({
+  // Create FeedBack
+  createFeedBack: function(feedBack) {
+    var feedBackId = FeedBacks.insert(feedBack);
+    return feedBackId;
+  },
   // Create user
   createNewUser: function(user) {
     var userId = Accounts.createUser(user);

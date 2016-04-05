@@ -1,4 +1,5 @@
 Votes = new Mongo.Collection("votes");
+FeedBacks = new Mongo.Collection("feedBacks");
 
 Votes.allow({
   insert: function (userId, doc) {

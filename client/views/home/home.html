@@ -12,7 +12,11 @@
         </div>
       </div>
       <div class="row">
-        {{> feedBack}}
+        <div class="ui grid stackable centered">
+          <div class="ten wide column">
+            {{> createFeedBack}}
+          </div>
+        </div>
       </div>
     {{ else }}
       {{> loginLinks }}
