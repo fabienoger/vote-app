@@ -80,8 +80,5 @@ Template.newUser.events({
     } else {
       Modules.client.utils.displayPanel("new-user-info", "negative", "warning", "All fields are required.");
     }
-
-    // Set RegExp for email
-    var regEmail = new RegExp(/^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/);
   }
 });
