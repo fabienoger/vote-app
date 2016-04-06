@@ -118,4 +118,4 @@ function redirectIfIsNotAdmin(context) {
   }
 }
 
-FlowRouter.triggers.enter([redirectIfIsNotAdmin], {only: ["users", "newUser"]});
+FlowRouter.triggers.enter([redirectIfIsNotAdmin], {only: ["users", "newUser", "feedBacks"]});
