@@ -6,7 +6,9 @@
 
 ## Usage
 * For launch this app run the following command :
-```meteor```
+```
+  meteor
+```
 
 * You can set a admin user with the mongo console :
 ``
