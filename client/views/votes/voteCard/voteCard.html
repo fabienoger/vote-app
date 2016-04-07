@@ -1,6 +1,14 @@
 <template name="voteCard">
   <div class="blue card">
-    <div class="content">
+    <div class="content-vote-card">
+      <div class="action-vote-card">
+        <div class="ui vertical animated button blue update-vote-card" tabindex="0">
+          <div class="hidden content">Update</div>
+          <div class="visible content">
+            <i class="edit icon"></i>
+          </div>
+        </div>
+      </div>
       <div class="header">
         <i class="icon bar chart"></i>
         {{ vote.name }}

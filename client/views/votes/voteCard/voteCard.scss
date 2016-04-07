@@ -1,0 +1,15 @@
+@import "{}/client/views/_layout/config";
+
+div.card {
+  div.content-vote-card {
+    div.action-vote-card {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+
+      div.update-vote-card {
+        margin-right: 0px;
+      }
+    }
+  }
+}
