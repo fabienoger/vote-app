@@ -4,7 +4,14 @@
       <div class="ui grid stackable">
         <div class="eight wide column well">
           <div class="well-header">
-            <h1>User List</h1>
+            <h1>
+              <i class="users icon"></i>
+              User List
+              <button id="empty-update-user" class="ui green button labeled icon right floated">
+                <i class="add user icon"></i>
+                New User
+              </button>
+            </h1>
           </div>
           <div class="well-content">
             <div id="info-users"></div>
@@ -67,7 +74,7 @@
           {{#if selectedUser}}
             {{> updateUser}}
           {{else}}
-
+            {{> newUser}}
           {{/if}}
         </div>
       </div>

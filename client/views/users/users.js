@@ -7,6 +7,10 @@ Template.users.rendered = function() {
 }
 
 Template.users.events({
+  // Empty the updateUser ReactiveVar
+  'click #empty-update-user': function(e, t) {
+    Modules.client.user.updateUser.set(false);
+  },
   // Display form on the right for updating user
   'click .update-user': function(e, t) {
     var user = null;

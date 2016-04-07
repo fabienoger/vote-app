@@ -1,0 +1,42 @@
+<template name="voteCard">
+  <div class="blue card">
+    <div class="content">
+      <div class="header">
+        <i class="icon bar chart"></i>
+        {{ vote.name }}
+      </div>
+      <div class="meta">
+        <p>
+          <i class="icon wait"></i>
+          End Date : {{ formatDate vote.endDate }}
+        </p>
+      </div>
+      <div class="description">
+        <div class="people-who-voted">
+          <h4>People who voted :</h4>
+          {{#each userListVote vote._id}}
+            <a class="ui label" href="/users/{{ vote._id }}">
+              {{ profile.firstName }}
+              {{ profile.lastName }}
+            </a>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="vote-options-list">
+        {{#each voteOptionsList vote._id}}
+          <a data-id="{{ ../vote._id }}" data-name="{{ name }}" class="ui labeled button vote-option">
+            <div data-id="{{ ../vote._id }}" data-name="{{ name }}" class="ui button
+              {{#if ifVoted ../vote._id name}}blue{{/if}}">
+              {{ name }}
+            </div>
+            <span data-id="{{ ../vote._id }}" data-name="{{ name }}" class="ui basic left pointing label">
+              {{ voted }}
+            </span>
+          </a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

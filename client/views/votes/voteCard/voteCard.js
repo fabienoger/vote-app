@@ -1,9 +1,17 @@
 /*****************************************************************************
 #                                                                            #
+#                                   RENDERED                                 #
+#                                                                            #
+*****************************************************************************/
+Template.voteCard.rendered = function() {
+}
+
+/*****************************************************************************
+#                                                                            #
 #                                   EVENTS                                   #
 #                                                                            #
 *****************************************************************************/
-Template.votesWithUserId.events({
+Template.voteCard.events({
   'click .ui.button.vote-option': function(e, t) {
     // Set variables
     var mongoId = e.target.dataset.id;
@@ -40,32 +48,13 @@ Template.votesWithUserId.events({
     }
   }
 });
-
 /*****************************************************************************
 #                                                                            #
 #                                   HELPERS                                  #
 #                                                                            #
 *****************************************************************************/
-
-Template.votesWithUserId.helpers({
-  // Return votes for one user
-  getUserVotes: function(userId) {
-    // Mongo request
-    var votes = Votes.find({usersId: userId});
-    return votes;
-  },
-  // Get the mongo object for the param :id
-  getUser: function() {
-    // Get user
-    var user = Meteor.users.findOne({_id: FlowRouter.getParam("id")});
-    return user;
-  },
-  // Return created votes for one user
-  getUserCreatedVotes: function(userId) {
-    // Mongo request
-    var votes = Votes.find({createdBy: userId});
-    return votes;
-  },
+Template.voteCard.helpers({
+  // Return all users who vote
   userListVote: function(voteId) {
     // Set variables
     var vote = Votes.findOne({_id: voteId});
@@ -76,7 +65,6 @@ Template.votesWithUserId.helpers({
     });
     return usersWhoVoted;
   },
-
   // If currentUser vote
   ifVoted: function(voteId, nameOption) {
     // Get mongo object vote

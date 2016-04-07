@@ -1,13 +1,9 @@
-Template.showUser.rendered = function() {
-
-}
-
 /*****************************************************************************
 #                                                                            #
 #                                   EVENTS                                   #
 #                                                                            #
 *****************************************************************************/
-Template.showUser.events({
+Template.votesWithUserId.events({
 });
 
 /*****************************************************************************
@@ -16,11 +12,9 @@ Template.showUser.events({
 #                                                                            #
 *****************************************************************************/
 
-Template.showUser.helpers({
+Template.votesWithUserId.helpers({
   // Return votes for one user
-  getUserVotes: function() {
-    // Initialize variables
-    var userId = FlowRouter.getParam("id");
+  getUserVotes: function(userId) {
     // Mongo request
     var votes = Votes.find({usersId: userId});
     return votes;
@@ -32,9 +26,7 @@ Template.showUser.helpers({
     return user;
   },
   // Return created votes for one user
-  getUserCreatedVotes: function() {
-    // Initialize variables
-    var userId = FlowRouter.getParam("id");
+  getUserCreatedVotes: function(userId) {
     // Mongo request
     var votes = Votes.find({createdBy: userId});
     return votes;

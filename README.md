@@ -20,7 +20,7 @@
 ```
   meteor mongo
 ```
-* In mongo console run the followin command :
+* In mongo console run the following command :
 ```
   db.users.update({_id: "user_id"}, {$set: {"profile.admin": true}})
 ```

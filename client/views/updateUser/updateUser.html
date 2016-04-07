@@ -1,7 +1,10 @@
 <template name="updateUser">
   <div class="update-user well">
     <div class="well-header">
-      <h1>Update {{ selecteduser.profile.firstName }} {{ selecteduser.profile.firstName }}</h1>
+      <h1>
+        <i class="edit icon"></i>
+        Update {{ selectedUser.profile.firstName }} {{ selectedUser.profile.firstName }}
+      </h1>
     </div>
     <div class="well-content">
       <form class="ui form" id="update-user">
@@ -27,8 +30,8 @@
           </div>
         </div>
         <div class="action">
-          <button type="submit" class="ui right labeled green icon button">
-            <i class="save icon right"></i>
+          <button type="submit" class="ui labeled green icon button">
+            <i class="save icon"></i>
             Save
           </button>
         </div>

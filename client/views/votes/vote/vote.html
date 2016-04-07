@@ -1,0 +1,18 @@
+<template name="vote">
+  <div class="vote">
+    <div class="votes-header">
+      <h1>
+        <i class="icon list"></i>
+        Votes
+      </h1>
+    </div>
+    <div class="votes-content">
+      <div id="vote-options-list-info"></div>
+      <div class="ui cards">
+        {{#each votes}}
+          {{> voteCard vote=. }}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>
