@@ -2,12 +2,20 @@
   <div class="blue card">
     <div class="content-vote-card">
       <div class="action-vote-card">
-        <div class="ui vertical animated button blue update-vote-card" tabindex="0">
-          <div class="hidden content">Update</div>
-          <div class="visible content">
-            <i class="edit icon"></i>
+        {{#if myVote vote._id }}
+          <div data-id="{{ vote._id }}" class="ui vertical animated button blue update-vote-card" tabindex="0">
+            <div data-id="{{ vote._id }}" class="hidden content">Update</div>
+            <div data-id="{{ vote._id }}" class="visible content">
+              <i data-id="{{ vote._id }}" class="edit icon"></i>
+            </div>
           </div>
-        </div>
+          <div data-id="{{ vote._id }}" class="ui vertical animated button red remove-vote-card" tabindex="0">
+            <div data-id="{{ vote._id }}" class="hidden content">Remove</div>
+            <div data-id="{{ vote._id }}" class="visible content">
+              <i data-id="{{ vote._id }}" class="remove icon"></i>
+            </div>
+          </div>
+        {{/if}}
       </div>
       <div class="header">
         <i class="icon bar chart"></i>

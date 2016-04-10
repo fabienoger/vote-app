@@ -12,6 +12,24 @@ Template.voteCard.rendered = function() {
 #                                                                            #
 *****************************************************************************/
 Template.voteCard.events({
+  // Update vote
+  'click .update-vote-card': function(e, t) {
+    console.log("Update => ", e.target.dataset.id);
+  },
+  // Remove vote
+  'click .remove-vote-card': function(e, t) {
+    console.log("Remove => ", e.target.dataset.id);
+    Meteor.call("removeVote", e.target.dataset.id, function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(result);
+        if (result == 1) {
+          Modules.client.utils.displayPanel("vote-options-list-info", "negative", "warning", "Your vote was successfully removed !");
+        }
+      }
+    });
+  },
   'click .ui.button.vote-option': function(e, t) {
     // Set variables
     var mongoId = e.target.dataset.id;
@@ -54,6 +72,15 @@ Template.voteCard.events({
 #                                                                            #
 *****************************************************************************/
 Template.voteCard.helpers({
+  // If current user create this vote
+  myVote: function(voteId) {
+    var vote = Votes.findOne({_id: voteId});
+    if (vote.createdBy == Meteor.userId()) {
+      return true;
+    } else {
+      return false;
+    }
+  },
   // Return all users who vote
   userListVote: function(voteId) {
     // Set variables

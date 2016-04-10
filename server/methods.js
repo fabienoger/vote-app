@@ -32,6 +32,7 @@ Meteor.methods({
       console.log(e);
     }
   },
+  // update vote with voteId
   updateVote: function(mongoId, voteName, userId) {
     try {
       var updateVote = Votes.update({
@@ -48,5 +49,13 @@ Meteor.methods({
     }
     console.log(updateVote);
     console.log(Votes.findOne({_id: mongoId}));
+  },
+  // Remove vote with voteId
+  removeVote: function(voteId) {
+    try {
+      return Votes.remove({_id: voteId});
+    } catch(e) {
+      return e;
+    }
   }
 });

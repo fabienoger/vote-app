@@ -2,12 +2,14 @@
 
 div.card {
   div.content-vote-card {
+    padding: 15px;
+
     div.action-vote-card {
       position: absolute;
       right: 0px;
       top: 0px;
 
-      div.update-vote-card {
+      div.update-vote-card, div.remove-vote-card {
         margin-right: 0px;
       }
     }
