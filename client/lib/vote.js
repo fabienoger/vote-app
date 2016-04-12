@@ -1,4 +1,10 @@
 Modules.client.vote = {
+  updateVote: {
+    // Define properties
+    name: new ReactiveVar(),
+    options: new ReactiveArray(),
+    endDate: null
+  },
   newVote: {
     // Define properties
     name: new ReactiveVar(),

@@ -1,5 +1,51 @@
 <template name="updateVote">
-  <div class="update-vote">
-
+  <div class="ui small modal update-vote-{{ vote._id }} update-vote">
+    <i class="close icon"></i>
+    <div class="header">
+      Update vote
+    </div>
+    <div class="content">
+      <form class="ui form" id="update-vote">
+        <div class="field">
+          <label for="update-vote-name">Name :</label>
+          <input type="text" value="{{ vote.name }}" id="update-vote-name" />
+        </div>
+        <div class="field">
+          <label for="update-new-vote-option">Vote option :</label>
+          <div class="ui action input">
+            <input type="text" id="update-new-vote-option" />
+            <button id="update-new-vote-add-option" class="ui icon button">
+              <i class="plus icon"></i>
+            </button>
+          </div>
+        </div>
+        <div id="update-vote-option-list-info"></div>
+        {{#if vote.options}}
+          <div id="update-vote-option-list" class="ui horizontal list update-vote-option-list">
+            {{#each vote.options }}
+              <div class="item">
+                <a data-name="{{ name }}" class="ui label vote">
+                  {{ name }}
+                  <i data-name="{{ name }}" class="delete icon remove-option"></i>
+                </a>
+              </div>
+            {{/each}}
+          </div>
+        {{/if}}
+        <div class="field">
+          <label for="dateTimePicker">End Date : </label>
+          <input type="text" class="ui dropdown datetimepicker" id="new-vote-date-time-picker" />
+        </div>
+      </form>
+    </div>
+    <div class="actions">
+      <div class="ui black deny button">
+        Nope
+      </div>
+      <div class="ui positive right labeled icon button">
+        Update my vote
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
   </div>
 </template>

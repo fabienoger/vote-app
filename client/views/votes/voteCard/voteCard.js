@@ -14,18 +14,21 @@ Template.voteCard.rendered = function() {
 Template.voteCard.events({
   // Update vote
   'click .update-vote-card': function(e, t) {
-    console.log("Update => ", e.target.dataset.id);
+    e.stopPropagation();
+    var voteId = e.currentTarget.dataset.id;
+    console.log("Update => ", e.currentTarget.dataset.id);
+    $('.ui.small.modal.update-vote-' + voteId).modal('show');
   },
   // Remove vote
   'click .remove-vote-card': function(e, t) {
-    console.log("Remove => ", e.target.dataset.id);
-    Meteor.call("removeVote", e.target.dataset.id, function(err, result) {
+    e.stopPropagation();
+    Meteor.call("removeVote", e.currentTarget.dataset.id, function(err, result) {
       if (err) {
         console.log(err);
       } else {
         console.log(result);
         if (result == 1) {
-          Modules.client.utils.displayPanel("vote-options-list-info", "negative", "warning", "Your vote was successfully removed !");
+          Modules.client.utils.displayPanel("vote-options-list-info", "positive", "checkmark", "Your vote was successfully removed !");
         }
       }
     });
