@@ -1,0 +1,22 @@
+burning-board-app:
+ image: foger/meteor
+ ports:
+  - 4000:3000
+ links:
+  - mongo
+ environment:
+  - ROOT_URL=http://localhost:4000/
+  - MONGO_URL=mongodb://mongo:27017/vote
+ volumes:
+  - ./:/meteor
+ command:
+  - sh
+  - -c
+  - meteor
+
+mongo:
+ image: mongo
+ volumes:
+  - ./:/data/db
+ ports:
+  - 27017:27017
