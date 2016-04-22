@@ -1,4 +1,4 @@
-burning-board-app:
+vote-app:
  image: foger/meteor
  ports:
   - 4000:3000
